@@ -11,16 +11,19 @@ enum custom_keycodes {
 };
 
 enum combos {
+  THREE_FOUR_DASH,
   DF_DASH,
   JK_ESC
 };
 
+const uint16_t PROGMEM three_four_combo[] = {KC_3, KC_4, COMBO_END};
 const uint16_t PROGMEM df_combo[] = {KC_D, KC_F, COMBO_END};
 const uint16_t PROGMEM jk_combo[] = {KC_J, KC_K, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
   // Add commonly used dash to home row
   [DF_DASH]    = COMBO(df_combo, KC_MINS),
+  [THREE_FOUR_DASH]    = COMBO(three_four_combo, KC_MINS),
   // For Vim, put Escape on the home row
   [JK_ESC]    = COMBO(jk_combo, KC_ESC),
 };
@@ -42,7 +45,7 @@ enum custom_layers {
 #define OSL_FUN  OSL(_FUNC)
 #define OSM_AGR  OSM(MOD_RALT)
 #define OSM_LCTL OSM(MOD_LCTL)
-#define OSM_SFT  OSM(MOD_LSFT) 
+#define OSM_SFT  OSM(MOD_LSFT)
 #define RSE_BSP  LT(_RAISE, KC_BSPC)
 
 
@@ -82,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______, KC_HOME, KC_END , KC_MINS, KC_EQL , KC_PGDN,                      KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, KC_APP ,_______ ,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       _______, KC_LT  , KC_GT  , KC_COPY, KC_PSTE, KC_SCLN,                      KC_MPLY, KC_MPRV, KC_MNXT, KC_VOLD, KC_VOLU,_______ ,
-  |--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           CTL_ESC, KC_TRNS, XXXXXXX,    RAISE  , KC_TRNS, KC_TRNS\
                                       //`--------------------------'  `--------------------------'
   ),

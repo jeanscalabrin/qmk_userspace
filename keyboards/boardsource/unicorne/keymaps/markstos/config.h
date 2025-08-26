@@ -69,7 +69,7 @@
 // Ref: https://beta.docs.qmk.fm/using-qmk/software-features/tap_hold#permissive-hold 
 #define PERMISSIVE_HOLD
 
-#define COMBO_COUNT 2
+#define COMBO_COUNT 3
 
 // Set the COMBO_TERM so low that I won't type the keys one after each other during normal typing.
 // They would have be held together intentionally to trigger this.
@@ -79,3 +79,8 @@
 // I want a relatively low timeout, so if I accidentally type "Shift", I can pause just briefly and move on.
 #define ONESHOT_TAP_TOGGLE 3  /* Tapping this number of times holds the key until tapped once again. */
 #define ONESHOT_TIMEOUT 2000  /* Time (in ms) before the one shot key is released */
+
+// Shim: if OLED is disabled for this keymap, provide a no-op for boardsource lib calls
+#ifndef OLED_ENABLE
+#    define oled_write_raw_P(data, size) ((void)0)
+#endif

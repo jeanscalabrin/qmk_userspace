@@ -27,6 +27,10 @@ This expects the right half connects to the computer.
  
 For the first flash, you may need to flash both halves.
 
+## To flash markstos layout to a cocot46plus keyboard
+
+    make aki27/cocot46plus:markstos
+
 # Leftover docs -- default docs from qmk_userspace template repo follow.
 
 This is a template repository which allows for an external set of QMK keymaps to be defined and compiled. This is useful for users who want to maintain their own keymaps without having to fork the main QMK repository.

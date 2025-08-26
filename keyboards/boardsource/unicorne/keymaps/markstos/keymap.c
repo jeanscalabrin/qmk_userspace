@@ -20,10 +20,12 @@ enum custom_keycodes {
 };
 
 enum combos {
+  THREE_FOUR_DASH,
   DF_DASH,
   JK_ESC
 };
 
+const uint16_t PROGMEM three_four_combo[] = {KC_3, KC_4, COMBO_END};
 const uint16_t PROGMEM df_combo[] = {KC_D, KC_F, COMBO_END};
 const uint16_t PROGMEM jk_combo[] = {KC_J, KC_K, COMBO_END};
 
@@ -31,6 +33,7 @@ const uint16_t PROGMEM jk_combo[] = {KC_J, KC_K, COMBO_END};
 combo_t key_combos[COMBO_COUNT] = {
   // Add commonly used dash to home row
   [DF_DASH]    = COMBO(df_combo, KC_MINS),
+  [THREE_FOUR_DASH]    = COMBO(three_four_combo, KC_MINS),
   // For Vim, put Escape on the home row
   [JK_ESC]    = COMBO(jk_combo, KC_ESC),
 
